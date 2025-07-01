@@ -1,22 +1,40 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <meta charset="UTF-8">
-  <title>My Tournament App</title>
-  
-  <!-- ✅ OneSignal SDK -->
-  <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
-  <script>
-    window.OneSignal = window.OneSignal || [];
-    OneSignal.push(function() {
-      OneSignal.init({
-        appId: "appId: "be1353c8-f98a-41c3-92b9-f70903c4e9bc"", // ⬅️ Replace this
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Tournament Room Updates</title>
+    <!-- OneSignal SDK -->
+    <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async></script>
+    <script>
+      window.OneSignal = window.OneSignal || [];
+      OneSignal.push(function () {
+        OneSignal.init({
+          appId: "be1353c8-f98a-41c3-92b9-f70903c4e9bc",
+          notifyButton: {
+            enable: true,
+          },
+        });
       });
-    });
-  </script>
-</head>
-<body>
-  <h1>🎮 Welcome to Tournament Room!</h1>
-  <p>Room ID & updates will be sent via notification.</p>
-</body>
+    </script>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background: #111;
+        color: #fff;
+        text-align: center;
+        padding: 50px;
+      }
+      h1 {
+        color: #ffcc00;
+      }
+      p {
+        font-size: 18px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>🎮 Tournament Room Updates</h1>
+    <p>📢 Allow notifications to get Room ID & Pass instantly!</p>
+    <p>✅ Click the bell icon (bottom right) to manage notifications.</p>
+  </body>
 </html>
