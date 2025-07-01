@@ -1,40 +1,50 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Tournament Room Updates</title>
-    <!-- OneSignal SDK -->
-    <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async></script>
-    <script>
-      window.OneSignal = window.OneSignal || [];
-      OneSignal.push(function () {
-        OneSignal.init({
-          appId: "be1353c8-f98a-41c3-92b9-f70903c4e9bc",
-          notifyButton: {
-            enable: true,
-          },
-        });
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title>Tournament Notifications</title>
+  <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async></script>
+  <script>
+    window.OneSignal = window.OneSignal || [];
+    OneSignal.push(function () {
+      OneSignal.init({
+        appId: "be1353c8-f98a-41c3-92b9-f70903c4e9bc",
+        notifyButton: {
+          enable: true,
+        },
       });
-    </script>
-    <style>
-      body {
-        font-family: Arial, sans-serif;
-        background: #111;
-        color: #fff;
-        text-align: center;
-        padding: 50px;
-      }
-      h1 {
-        color: #ffcc00;
-      }
-      p {
-        font-size: 18px;
-      }
-    </style>
-  </head>
-  <body>
-    <h1>🎮 Tournament Room Updates</h1>
-    <p>📢 Allow notifications to get Room ID & Pass instantly!</p>
-    <p>✅ Click the bell icon (bottom right) to manage notifications.</p>
-  </body>
+    });
+  </script>
+  <style>
+    body {
+      background-color: #121212;
+      color: #fff;
+      font-family: sans-serif;
+      text-align: center;
+      padding: 50px;
+    }
+    button {
+      background-color: #ffcc00;
+      color: #000;
+      padding: 12px 20px;
+      font-size: 18px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h1>🎯 Tournament Notifications</h1>
+  <p>Click below to allow notifications for Room ID updates</p>
+  <button onclick="subscribe()">🔔 Enable Notifications</button>
+
+  <script>
+    function subscribe() {
+      OneSignal.push(function () {
+        OneSignal.showSlidedownPrompt(); // Show prompt manually
+      });
+    }
+  </script>
+</body>
 </html>
